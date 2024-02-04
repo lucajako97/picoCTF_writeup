@@ -3,6 +3,6 @@ message = [128, 322, 353, 235, 336, 73, 198, 332, 202, 285, 57, 87, 262, 221, 21
 decrypted_message = b""
 
 for l in message:
-	decrypted_message = decrypted_message + bytes(alphabet[l % 37], 'utf-8')
+	decrypted_message += bytes(alphabet[l % len(alphabet)], 'utf-8')
 
 print("picoCTF{" + decrypted_message.decode('utf-8') + "}")
